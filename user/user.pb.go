@@ -28,7 +28,7 @@ type CreateUserRequest struct {
 	LastName      string                 `protobuf:"bytes,2,opt,name=lastName,proto3" json:"lastName,omitempty"`
 	MiddleName    *string                `protobuf:"bytes,3,opt,name=middleName,proto3,oneof" json:"middleName,omitempty"`
 	Nickname      *string                `protobuf:"bytes,4,opt,name=nickname,proto3,oneof" json:"nickname,omitempty"`
-	Email         string                 `protobuf:"bytes,5,opt,name=email,proto3" json:"email,omitempty"`
+	NotGay        string                 `protobuf:"bytes,5,opt,name=notGay,proto3" json:"notGay,omitempty"`
 	PhoneNumber   *string                `protobuf:"bytes,6,opt,name=phoneNumber,proto3,oneof" json:"phoneNumber,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -92,9 +92,9 @@ func (x *CreateUserRequest) GetNickname() string {
 	return ""
 }
 
-func (x *CreateUserRequest) GetEmail() string {
+func (x *CreateUserRequest) GetNotGay() string {
 	if x != nil {
-		return x.Email
+		return x.NotGay
 	}
 	return ""
 }
@@ -370,15 +370,15 @@ var File_user_user_proto protoreflect.FileDescriptor
 
 const file_user_user_proto_rawDesc = "" +
 	"\n" +
-	"\x0fuser/user.proto\x12\x04user\x1a\x1bgoogle/protobuf/empty.proto\x1a\x0fuser/type.proto\"\xf2\x01\n" +
+	"\x0fuser/user.proto\x12\x04user\x1a\x1bgoogle/protobuf/empty.proto\x1a\x0fuser/type.proto\"\xf4\x01\n" +
 	"\x11CreateUserRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1a\n" +
 	"\blastName\x18\x02 \x01(\tR\blastName\x12#\n" +
 	"\n" +
 	"middleName\x18\x03 \x01(\tH\x00R\n" +
 	"middleName\x88\x01\x01\x12\x1f\n" +
-	"\bnickname\x18\x04 \x01(\tH\x01R\bnickname\x88\x01\x01\x12\x14\n" +
-	"\x05email\x18\x05 \x01(\tR\x05email\x12%\n" +
+	"\bnickname\x18\x04 \x01(\tH\x01R\bnickname\x88\x01\x01\x12\x16\n" +
+	"\x06notGay\x18\x05 \x01(\tR\x06notGay\x12%\n" +
 	"\vphoneNumber\x18\x06 \x01(\tH\x02R\vphoneNumber\x88\x01\x01B\r\n" +
 	"\v_middleNameB\v\n" +
 	"\t_nicknameB\x0e\n" +
