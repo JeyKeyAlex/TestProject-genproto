@@ -108,12 +108,13 @@ func (x *CreateUserRequest) GetPhoneNumber() string {
 
 type UpdateUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          *string                `protobuf:"bytes,1,opt,name=name,proto3,oneof" json:"name,omitempty"`
-	LastName      *string                `protobuf:"bytes,2,opt,name=lastName,proto3,oneof" json:"lastName,omitempty"`
-	MiddleName    *string                `protobuf:"bytes,3,opt,name=middleName,proto3,oneof" json:"middleName,omitempty"`
-	Nickname      *string                `protobuf:"bytes,4,opt,name=nickname,proto3,oneof" json:"nickname,omitempty"`
-	Email         *string                `protobuf:"bytes,5,opt,name=email,proto3,oneof" json:"email,omitempty"`
-	PhoneNumber   *string                `protobuf:"bytes,6,opt,name=phoneNumber,proto3,oneof" json:"phoneNumber,omitempty"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          *string                `protobuf:"bytes,2,opt,name=name,proto3,oneof" json:"name,omitempty"`
+	LastName      *string                `protobuf:"bytes,3,opt,name=lastName,proto3,oneof" json:"lastName,omitempty"`
+	MiddleName    *string                `protobuf:"bytes,4,opt,name=middleName,proto3,oneof" json:"middleName,omitempty"`
+	Nickname      *string                `protobuf:"bytes,5,opt,name=nickname,proto3,oneof" json:"nickname,omitempty"`
+	Email         *string                `protobuf:"bytes,6,opt,name=email,proto3,oneof" json:"email,omitempty"`
+	PhoneNumber   *string                `protobuf:"bytes,7,opt,name=phoneNumber,proto3,oneof" json:"phoneNumber,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -146,6 +147,13 @@ func (x *UpdateUserRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateUserRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserRequest) Descriptor() ([]byte, []int) {
 	return file_user_user_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *UpdateUserRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
 }
 
 func (x *UpdateUserRequest) GetName() string {
@@ -382,16 +390,17 @@ const file_user_user_proto_rawDesc = "" +
 	"\vphoneNumber\x18\x06 \x01(\tH\x02R\vphoneNumber\x88\x01\x01B\r\n" +
 	"\v_middleNameB\v\n" +
 	"\t_nicknameB\x0e\n" +
-	"\f_phoneNumber\"\xa1\x02\n" +
-	"\x11UpdateUserRequest\x12\x17\n" +
-	"\x04name\x18\x01 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x1f\n" +
-	"\blastName\x18\x02 \x01(\tH\x01R\blastName\x88\x01\x01\x12#\n" +
+	"\f_phoneNumber\"\xb1\x02\n" +
+	"\x11UpdateUserRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x17\n" +
+	"\x04name\x18\x02 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x1f\n" +
+	"\blastName\x18\x03 \x01(\tH\x01R\blastName\x88\x01\x01\x12#\n" +
 	"\n" +
-	"middleName\x18\x03 \x01(\tH\x02R\n" +
+	"middleName\x18\x04 \x01(\tH\x02R\n" +
 	"middleName\x88\x01\x01\x12\x1f\n" +
-	"\bnickname\x18\x04 \x01(\tH\x03R\bnickname\x88\x01\x01\x12\x19\n" +
-	"\x05email\x18\x05 \x01(\tH\x04R\x05email\x88\x01\x01\x12%\n" +
-	"\vphoneNumber\x18\x06 \x01(\tH\x05R\vphoneNumber\x88\x01\x01B\a\n" +
+	"\bnickname\x18\x05 \x01(\tH\x03R\bnickname\x88\x01\x01\x12\x19\n" +
+	"\x05email\x18\x06 \x01(\tH\x04R\x05email\x88\x01\x01\x12%\n" +
+	"\vphoneNumber\x18\a \x01(\tH\x05R\vphoneNumber\x88\x01\x01B\a\n" +
 	"\x05_nameB\v\n" +
 	"\t_lastNameB\r\n" +
 	"\v_middleNameB\v\n" +
