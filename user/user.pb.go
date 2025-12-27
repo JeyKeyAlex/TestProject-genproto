@@ -244,7 +244,8 @@ func (x *ApproveUserRequest) GetEmail() string {
 
 type GetUserListResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	User          []*User                `protobuf:"bytes,1,rep,name=user,proto3" json:"user,omitempty"`
+	Count         int64                  `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	User          []*User                `protobuf:"bytes,2,rep,name=user,proto3" json:"user,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -277,6 +278,13 @@ func (x *GetUserListResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetUserListResponse.ProtoReflect.Descriptor instead.
 func (*GetUserListResponse) Descriptor() ([]byte, []int) {
 	return file_user_user_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GetUserListResponse) GetCount() int64 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
 }
 
 func (x *GetUserListResponse) GetUser() []*User {
@@ -408,9 +416,10 @@ const file_user_user_proto_rawDesc = "" +
 	"\x06_emailB\x0e\n" +
 	"\f_phoneNumber\"*\n" +
 	"\x12ApproveUserRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\"5\n" +
-	"\x13GetUserListResponse\x12\x1e\n" +
-	"\x04user\x18\x01 \x03(\v2\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"K\n" +
+	"\x13GetUserListResponse\x12\x14\n" +
+	"\x05count\x18\x01 \x01(\x03R\x05count\x12\x1e\n" +
+	"\x04user\x18\x02 \x03(\v2\n" +
 	".user.UserR\x04user\"1\n" +
 	"\x0fGetUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
