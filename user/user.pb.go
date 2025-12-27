@@ -245,7 +245,7 @@ func (x *ApproveUserRequest) GetEmail() string {
 type GetUserListResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Count         int64                  `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	User          []*User                `protobuf:"bytes,2,rep,name=user,proto3" json:"user,omitempty"`
+	Users         []*User                `protobuf:"bytes,2,rep,name=users,proto3" json:"users,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -287,9 +287,9 @@ func (x *GetUserListResponse) GetCount() int64 {
 	return 0
 }
 
-func (x *GetUserListResponse) GetUser() []*User {
+func (x *GetUserListResponse) GetUsers() []*User {
 	if x != nil {
-		return x.User
+		return x.Users
 	}
 	return nil
 }
@@ -416,11 +416,11 @@ const file_user_user_proto_rawDesc = "" +
 	"\x06_emailB\x0e\n" +
 	"\f_phoneNumber\"*\n" +
 	"\x12ApproveUserRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\"K\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"M\n" +
 	"\x13GetUserListResponse\x12\x14\n" +
-	"\x05count\x18\x01 \x01(\x03R\x05count\x12\x1e\n" +
-	"\x04user\x18\x02 \x03(\v2\n" +
-	".user.UserR\x04user\"1\n" +
+	"\x05count\x18\x01 \x01(\x03R\x05count\x12 \n" +
+	"\x05users\x18\x02 \x03(\v2\n" +
+	".user.UserR\x05users\"1\n" +
 	"\x0fGetUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
 	".user.UserR\x04user\"\x1b\n" +
@@ -458,7 +458,7 @@ var file_user_user_proto_goTypes = []any{
 	(*emptypb.Empty)(nil),       // 7: google.protobuf.Empty
 }
 var file_user_user_proto_depIdxs = []int32{
-	6, // 0: user.GetUserListResponse.user:type_name -> user.User
+	6, // 0: user.GetUserListResponse.users:type_name -> user.User
 	6, // 1: user.GetUserResponse.user:type_name -> user.User
 	0, // 2: user.UserService.Create:input_type -> user.CreateUserRequest
 	2, // 3: user.UserService.Approve:input_type -> user.ApproveUserRequest
